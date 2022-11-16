@@ -5,7 +5,7 @@ import config from './config.js'
 
 const app = new express()
 
-app.use(express.static('ponerHtmlAca'))
+app.use(express.static('FormularioHtml'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 

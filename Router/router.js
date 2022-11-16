@@ -8,12 +8,15 @@ export class RouterParticipantes {
     }
 
     start() {
-        /* GET Cliente/s */
-        this.router.get('/', this.controladorParticipantes.getParticipantes())
-        /* POST Cliente */
-        this.router.post('/', this.controladorParticipantes.postParticipantes())
-        /* PUT Cliente */
+        
+        this.router.get('/', this.controladorParticipantes.getParticipantes)
+        
+        this.router.post('/', this.controladorParticipantes.postParticipantes)
 
+        this.router.put('/:id' , this.controladorParticipantes.putParticipante)
+
+        this.router.delete('/:id', this.controladorParticipantes.deleteParticipantes)
+        
         return this.router
     }
 }
