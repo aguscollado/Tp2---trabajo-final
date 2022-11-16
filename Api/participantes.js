@@ -32,8 +32,8 @@ class apiParticipantes {
         return await this.apiParticipantes.obtenerParticipantes().lenght
 
     }
-    getRandom(min, cantidadParticipantes) {
-        return Math.random() * (cantidadParticipantes - min) + min;
+    getRandom() {
+        return Math.floor(Math.random() * this.cantidadParticipantes())
       }
 
 
