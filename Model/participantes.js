@@ -2,13 +2,14 @@ class ParticipantesSorteo {
 
     constructor() {
         this.participantes = [
-            { id: '1', nombre: 'Juan', apellido: 'Rodriguez', domicilio: 'Yatay 239' }
+            { id: '1', nombre: 'Juan', apellido: 'Rodriguez', domicilio: 'Yatay 239' },
+            { id: '2', nombre: 'Mario', apellido: 'Party', domicilio: 'Yatay 239' }
         ]
     }
 
     obtenerParticipantes = async () => {
         try {
-            return this.participantes
+            return await this.participantes
         }
         catch (err) {
             return []
@@ -26,29 +27,33 @@ class ParticipantesSorteo {
             return this.participantes
         }
         catch {
-            console.log(`No se pudo agregar al participante ${participante.apellido}`)
+            console.log(`No se pudo agregar al participante, motivo de error:  ${err.message}`)
 
         }
     }
 
     modificarParticipante = async (participante, id) => {
-        participante.id = id
-        const index = this.participante.findIndex(participante => participante.id == id)
-        this.participante.splice(index, 1, participante)
-
-        return participante    
-    }
-
+        try{
+            participante.id = id
+            const index = this.participante.findIndex(participante => participante.id == id)
+            this.participante.splice(index, 1, participante)
+    
+            return participante    
+        } catch(err){
+            console.log(`Error al actualizar el participante buscado ${err.message}`)
+        }
+        
+    
     quitarParticipante = async (id) => {
         try {
             const index = this.participantes.findIndex(participante => participante.id == id)
             const participante = this.participantes[index]
-            participantes.splice(index, 1)
+            this.participantes.splice(index, 1)
 
             return participante
 
-        } catch {
-            console.log(`Error al eliminar el participante buscado`)
+        } catch(err) {
+            console.log(`Error al eliminar el participante buscado ${err.message}`)
         }
 
     }

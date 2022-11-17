@@ -20,10 +20,11 @@ class apiParticipantes {
         return await this.arrayParticipantes.modificarParticipante(participante,id)
     }
 
-
     quitarUnParticipante = async (id) => {
         return await this.arrayParticipantes.quitarParticipante(id)
     }
+
+    //********************************* LOS DE ARRIBA VAN A LOS METODOS GET POST PUT DELETE ****************************************/
 
     // Hacer metodos para sacar estadisticas tipo rango edad que participo?
     // Otras opciones de metodoso para que no quede en 2 nada mas.

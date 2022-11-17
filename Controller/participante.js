@@ -6,9 +6,9 @@ class controllerParticipantes {
         this.arrayParticipantes = new participantesApi()
     }
 
-    getParticipantes = async (res) => {
+    getParticipantes = async (req, res) => {
         //Sin req salvo que le metamos alguna busqueda de algun participante
-        res.json( await this.arrayParticipantes.devolverParticipantes())
+        res.json(await this.arrayParticipantes.devolverParticipantes())
     }
 
     postParticipantes = async (req, res) => {

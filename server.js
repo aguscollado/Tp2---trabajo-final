@@ -5,14 +5,13 @@ import nodemailer from 'nodemailer'
 
 
 const app = express()
-const router = express.Router()
+/* const router = express.Router() */
 
 app.use(express.static('FormularioHtml'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-
-router.post('/', (req, res) => {
+/* router.post('/', (req, res) => {
    res.json({nombre: 'juan'})
     const transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
@@ -41,7 +40,7 @@ router.post('/', (req, res) => {
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
     });
-})
+}) */
 
 /*Name	Jimmy Hodkiewicz
 Username	jimmy.hodkiewicz@ethereal.email (also works as a real inbound email address)
@@ -57,9 +56,8 @@ transporter = nodemailer.createTransport({
 */
 
 
-
-app.use('/api/participantes.js', new RouterParticipantes().start())
-app.use('/send', router)
+/* app.use('/send', router) */
+app.use('/api/participantes', new RouterParticipantes().start())
 const PORT = config.PORT
 const server = app.listen(PORT, () => console.log(`Servidor escuchando puerto: ${PORT}`))
 server.on('error', error => console.log(`Aca esta el error: ${error.message}`))

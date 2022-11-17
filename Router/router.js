@@ -9,7 +9,7 @@ export class RouterParticipantes {
 
     start() {
         
-        this.router.get('/', this.controladorParticipantes.getParticipantes)
+        this.router.get('/traer', this.controladorParticipantes.getParticipantes)
         
         this.router.post('/', this.controladorParticipantes.postParticipantes)
 
