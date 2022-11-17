@@ -3,7 +3,9 @@ class ParticipantesSorteo {
     constructor() {
         this.participantes = [
             { id: '1', nombre: 'Juan', apellido: 'Rodriguez', domicilio: 'Yatay 239' },
-            { id: '2', nombre: 'Mario', apellido: 'Party', domicilio: 'Yatay 239' }
+            { id: '2', nombre: 'Mario', apellido: 'Party', domicilio: 'Yatay 239' },
+            { id: '3', nombre: 'Pato', apellido: 'Lucas', domicilio: 'Yatay 239' },
+            { id: '4', nombre: 'Clark', apellido: 'Wayne', domicilio: 'Yatay 239'}
         ]
     }
 
@@ -33,17 +35,18 @@ class ParticipantesSorteo {
     }
 
     modificarParticipante = async (participante, id) => {
-        try{
+        try {
             participante.id = id
             const index = this.participante.findIndex(participante => participante.id == id)
             this.participante.splice(index, 1, participante)
-    
-            return participante    
-        } catch(err){
+
+            return participante
+        } catch (err) {
+
             console.log(`Error al actualizar el participante buscado ${err.message}`)
         }
-        
-    
+
+    }
     quitarParticipante = async (id) => {
         try {
             const index = this.participantes.findIndex(participante => participante.id == id)
@@ -52,14 +55,12 @@ class ParticipantesSorteo {
 
             return participante
 
-        } catch(err) {
+        } catch (err) {
             console.log(`Error al eliminar el participante buscado ${err.message}`)
         }
 
     }
 }
-
-
 
 export default ParticipantesSorteo
 
