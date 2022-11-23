@@ -52,5 +52,6 @@ class apiGanadores {
 
 export default apiGanadores
 
-const test = new apiGanadores()
+/* const test = new apiGanadores()
 console.log(`pruebaaaaaaaaaaaaaaaaaaaaaaaaaaa`, await test.traerGanadores())
+ */
