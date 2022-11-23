@@ -2,8 +2,8 @@ class ParticipantesSorteo {
 
     constructor() {
         this.participantes = [
-            { id: '1', nombre: 'Juan', apellido: 'Rodriguez', domicilio: 'Yatay 239', mail: 'tamara.lach@intive.com'},
-            { id: '2', nombre: 'Pepe', apellido: 'Fernandez', domicilio: 'Belgrano algo 239', mail: 'tamara.lach@intive.com'},
+            { id: '1', nombre: 'tamara', apellido: 'lach', domicilio: 'Yatay 239', mail: 'tamara.lach@intive.com'},
+            { id: '2', nombre: 'Alejandro Agustin', apellido: 'Fernandez', domicilio: 'Belgrano algo 239', mail: 'agus.coll12@gmail.com'},
             { id: '3', nombre: 'lucia', apellido: 'alvez', domicilio: 'Yatay 239', mail: 'tamara.lach@intive.com'},
             { id: '4', nombre: 'ricardo', apellido: 'Montaner', domicilio: 'Belgrano algo 239', mail: 'tamara.lach@intive.com'},
             { id: '5', nombre: 'China', apellido: 'Suarez', domicilio: 'Yatay 239', mail: 'tamara.lach@intive.com'},

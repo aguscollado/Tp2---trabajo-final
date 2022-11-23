@@ -23,7 +23,9 @@ class apiGanadores {
             })
 
             for (let index = 0; index < losGanadores.length; index++) {
-                const ganador = losGanadores[index];
+                const ganador = await losGanadores[index];
+
+                console.log(`aca esta el console`, ganador)
 
                 const mailOptions = {
                     from: 'Nodemailer test',
@@ -45,7 +47,7 @@ class apiGanadores {
             return losGanadores
 
         } catch (error) {
-            console.log(`ACA ESTA EL ERROR EN API, motivo de error:  ${error.message}`)
+            console.log(`ACA ESTA EL ERROR EN API traerGanadores, motivo de error:  ${error.message}`)
         }
     }
 }

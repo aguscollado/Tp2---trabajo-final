@@ -5,7 +5,7 @@ class Ganadores {
 
     constructor() {
         this.ganadores = []
-        this.participantes = new ParticipantesParaSorteoEnMongo()
+        this.participantes = new ParticipantesParaSorteo()
     }
 
     cantidadDeParticiantes = async () => {
@@ -42,7 +42,7 @@ class Ganadores {
                 this.ganadores.push(arrayAux[numeroRandom])
                 arrayAux.splice(numeroRandom, 1)
             }
-
+            
             return this.ganadores
         }
         catch (error) {
