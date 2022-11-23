@@ -1,4 +1,4 @@
-import GanadoresApi from '../Api/ganadores.js'
+import GanadoresApi from '../api/ganadores.js'
 
 class ControllerGanadores {
 

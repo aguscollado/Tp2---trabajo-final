@@ -1,6 +1,6 @@
 import config from '../config.js'
-import factoryDeParticipantes from '../Model/Dao/factoryParticipantes.js'
-//import listaPersonas from '../Model/participantes.js'
+import factoryDeParticipantes from '../model/DAO/factoryParticipantes.js'
+//import listaPersonas from '../model/participantes.js'
 
 class apiParticipantes {
 

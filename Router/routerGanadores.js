@@ -1,4 +1,4 @@
-import ControllerGanadores from '../Controller/ganadores.js'
+import ControllerGanadores from '../controller/ganadores.js'
 import express from 'express'
 
 export class RouterGanadores {

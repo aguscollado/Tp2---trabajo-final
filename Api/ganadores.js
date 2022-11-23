@@ -1,4 +1,4 @@
-import GanadoresSorteados from '../Model/ganadores.js'
+import GanadoresSorteados from '../model/ganadores.js'
 import nodemailer from 'nodemailer'
 
 class apiGanadores {

@@ -6,15 +6,24 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "test-ext": "mocha test/test-ext.js",
+        "start": "node server.js",
         "watch": "nodemon server.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@faker-js/faker": "^7.6.0",
+        "chai": "^4.3.7",
         "dotenv": "^16.0.3",
         "express": "^4.18.2",
+        "i": "^0.3.7",
+        "joi": "^17.7.0",
+        "mocha": "^10.1.0",
         "mongodb": "^4.12.0",
-        "nodemailer": "^6.8.0"
+        "nodemailer": "^6.8.0",
+        "npm": "^9.1.2",
+        "supertest": "^6.3.1"
     }
 }

@@ -1,6 +1,6 @@
 import express from 'express'
-import { RouterParticipantes } from './Router/router.js'
-import { RouterGanadores } from './Router/routerGanadores.js'
+import { RouterParticipantes } from './router/router.js'
+import { RouterGanadores } from './router/routerGanadores.js'
 import config from './config.js'
 import nodemailer from 'nodemailer'
 
@@ -8,7 +8,7 @@ import nodemailer from 'nodemailer'
 const app = express()
 /* const router = express.Router() */
 
-app.use(express.static('FormularioHtml'))
+app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

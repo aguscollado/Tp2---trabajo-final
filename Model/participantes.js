@@ -13,7 +13,8 @@ class ParticipantesSorteo {
 
     obtenerParticipantes = async () => {
         try {
-            return await this.participantes
+            //return await this.participantes
+            return await Promise.resolve(this.participantes)
         }
         catch (err) {
             console.log(`No se pudo devolver a los participantes, motivo de error:  ${err.message}`)
@@ -26,10 +27,12 @@ class ParticipantesSorteo {
     ingresarParticipante = async (participante) => {
         try {
             //Sin usar mongo que nos otorgue la id
-            let id = await parseInt(this.participantes[this.participantes.length - 1].id) + 1
-            participante.id = id
-            await this.participantes.push(participante)
-            return this.participante
+            let id = parseInt(this.participantes[this.participantes.length - 1].id) + 1
+            participante.id = String(id)
+
+            this.participantes.push(participante)
+
+            return await Promise.resolve(participante)
         }
         catch (err) {
             console.log(`No se pudo agregar al participante, motivo de error:  ${err.message}`)
@@ -40,10 +43,10 @@ class ParticipantesSorteo {
     modificarParticipante = async (participante, id) => {
         try {
             participante.id = id
-            const index = await this.participantes.findIndex(participanteBuscado => participanteBuscado.id == id)
+            const index = this.participantes.findIndex(participanteBuscado => participanteBuscado.id == id)
             this.participantes.splice(index, 1, participante)
 
-            return participante
+            return await Promise.resolve(participante)
         } catch (err) {
             console.log(`Error al actualizar el participante buscado ${err.message}`)
         }
@@ -55,7 +58,7 @@ class ParticipantesSorteo {
             const participante = this.participantes[index]
             this.participantes.splice(index, 1)
 
-            return participante
+            return await Promise.resolve(participante)
 
         } catch (err) {
             console.log(`Error al eliminar el participante buscado ${err.message}`)

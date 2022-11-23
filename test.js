@@ -1,4 +1,4 @@
-import ganadores from "./Model/ganadores.js";
+import ganadores from "./model/ganadores.js";
 
 const test = new ganadores()
 

@@ -1,4 +1,4 @@
-import controllerParticipantes from '../Controller/participante.js'
+import controllerParticipantes from '../controller/participante.js'
 
 import express from 'express'
 

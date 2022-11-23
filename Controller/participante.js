@@ -1,4 +1,4 @@
-import participantesApi from '../Api/participantes.js'
+import participantesApi from '../api/participantes.js'
 
 class controllerParticipantes {
 
