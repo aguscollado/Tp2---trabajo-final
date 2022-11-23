@@ -1,4 +1,5 @@
 import controllerParticipantes from '../Controller/participante.js'
+
 import express from 'express'
 
 export class RouterParticipantes {
@@ -8,7 +9,7 @@ export class RouterParticipantes {
     }
 
     start() {
-        
+
         this.router.get('/traer', this.controladorParticipantes.getParticipantes)
         
         this.router.post('/', this.controladorParticipantes.postParticipantes)

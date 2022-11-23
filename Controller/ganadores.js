@@ -6,7 +6,6 @@ class ControllerGanadores {
         this.losGanadores = new GanadoresApi()
     }
 
-
     getSorteados = async (req, res) => {
         try {
 
