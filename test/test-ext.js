@@ -7,7 +7,7 @@ import generador from '../generador/participantes.js'
 describe('test api rest full', () => {
     describe('GET', () => {
         it('Debería retornar un status 200', async () => {
-            let response = await request.get('/api/participantes')
+            let response = await request.get('/api/participantes/traer')
             expect(response.status).to.eql(200)
         })
     })
