@@ -1,10 +1,11 @@
 import ParticipantesParaSorteo from './participantes.js'
+import ParticipantesParaSorteoEnMongo from './participantesEnMongo.js'
 
 class Ganadores {
 
     constructor() {
         this.ganadores = []
-        this.participantes = new ParticipantesParaSorteo()
+        this.participantes = new ParticipantesParaSorteoEnMongo()
     }
 
     cantidadDeParticiantes = async () => {
