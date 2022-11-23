@@ -27,24 +27,8 @@ class apiParticipantes {
     //********************************* LOS DE ARRIBA VAN A LOS METODOS GET POST PUT DELETE ****************************************/
 
     // Hacer metodos para sacar estadisticas tipo rango edad que participo?
-    // Otras opciones de metodoso para que no quede en 2 nada mas.
+    // Otras opciones de metodos para que no quede en 2 nada mas.
 
-    cantidadParticipantes = async () => {
-        return await this.apiParticipantes.obtenerParticipantes().lenght
-
-    }
-    getRandom() {
-        return Math.floor(Math.random() * this.cantidadParticipantes())
-    }
-
-
-    obtenerGanadores = async () => {
-        for (let index = 0; index < 3; index++) {
-            this.getRandom(1, cantidadParticipantes())
-            index++
-            //hacer que devuelva los id con los 3 ganadores
-        }
-    }
 }
 
 export default apiParticipantes
