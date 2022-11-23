@@ -1,6 +1,5 @@
-const PORT = 8082
+const PORT = 8080
 const MODO_DE_PERSISTENCIA = 'MEM'
-
 
 export default {
     PORT,

@@ -13,11 +13,11 @@ class apiParticipantes {
     }
 
     incorporarParticipante = async (participante) => {
-        return await  this.arrayParticipantes.ingresarParticipante(participante)
+        return await this.arrayParticipantes.ingresarParticipante(participante)
     }
 
     actualizarUnParticipante = async (participante, id) => {
-        return await this.arrayParticipantes.modificarParticipante(participante,id)
+        return await this.arrayParticipantes.modificarParticipante(participante, id)
     }
 
     quitarUnParticipante = async (id) => {
@@ -35,12 +35,12 @@ class apiParticipantes {
     }
     getRandom() {
         return Math.floor(Math.random() * this.cantidadParticipantes())
-      }
+    }
 
 
     obtenerGanadores = async () => {
         for (let index = 0; index < 3; index++) {
-            this.getRandom(1,cantidadParticipantes())
+            this.getRandom(1, cantidadParticipantes())
             index++
             //hacer que devuelva los id con los 3 ganadores
         }

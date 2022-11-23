@@ -13,7 +13,7 @@ export class RouterParticipantes {
         
         this.router.post('/', this.controladorParticipantes.postParticipantes)
 
-        this.router.put('/:id' , this.controladorParticipantes.putParticipante)
+        this.router.put('/:id', this.controladorParticipantes.putParticipante)
 
         this.router.delete('/:id', this.controladorParticipantes.deleteParticipantes)
         

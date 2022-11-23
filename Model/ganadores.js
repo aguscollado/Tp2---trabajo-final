@@ -1,44 +1,58 @@
-class ganadores {
+import ParticipantesParaSorteo from './participantes.js'
+
+class Ganadores {
 
     constructor() {
-        this.ganadores = [
-            {}
-        ]
-
-        this.participantes = [
-            { id: '1', nombre: 'Juan', apellido: 'Rodriguez', domicilio: 'Yatay 239' },
-            { id: '2', nombre: 'Pepe', apellido: 'Fernandez', domicilio: 'Belgrano algo 239' },
-            { id: '3', nombre: 'lucia', apellido: 'alvez', domicilio: 'Yatay 239' },
-            { id: '4', nombre: 'ricardo', apellido: 'Montaner', domicilio: 'Belgrano algo 239'},
-            { id: '5', nombre: 'China', apellido: 'Suarez', domicilio: 'Yatay 239' },
-            { id: '6', nombre: 'Pepe', apellido: 'Argento', domicilio: 'Belgrano algo 239' },
-        ]
+        this.ganadores = []
+        this.participantes = new ParticipantesParaSorteo()
     }
 
-    cantidadDeParticiantes() {
-        return this.participantes.length
-    }
-
-    random = () => {
-        return Math.floor(Math.random() * this.participantes.length)
-    }
-
-    obtenerGanadores = () =>  {
-        const TOPE_GANADORES = 3
-        const arrayAux = [...this.participantes]
-        let ganadores = []
-        for(let index = 0; index < TOPE_GANADORES; index++) {
-            let numeroRandom = this.random()
-            ganadores.push(arrayAux[numeroRandom])
-            arrayAux.splice(numeroRandom, 1)
+    cantidadDeParticiantes = async () => {
+        try {
+            return (await this.participantes.obtenerParticipantes()).length
         }
-        return ganadores
+        catch (error) {
+            console.log(`ACA ESTA EL ERROR EN MODEL, motivo de error:  ${err.message}`)
+        }
+
     }
 
-    sortear = () => {
-        obtenerGanadores()
+    random = async () => {
+        try {
+            const cantParticipantes = await this.cantidadDeParticiantes()
+            return Math.floor(Math.random() * cantParticipantes)
+        }
+        catch (error) {
+            console.log(`ACA ESTA EL ERROR EN MODEL, motivo de error:  ${err.message}`)
+        }
+
     }
 
+    sortear = async () => {
+        try {
+            const TOPE_GANADORES = 3
+            /* const arrayAux = [...await this.participantes.obtenerParticipantes()] */ // si hago esto, sale un undifined de vez en cuando
+            const arrayAux = await this.participantes.obtenerParticipantes()
+
+            console.log(arrayAux)
+
+            for (let index = 0; index < TOPE_GANADORES; index++) {
+                let numeroRandom = await this.random()
+                this.ganadores.push(arrayAux[numeroRandom])
+                arrayAux.splice(numeroRandom, 1)
+            }
+
+            return this.ganadores
+        }
+        catch (error) {
+            console.log(`ACA ESTA EL ERROR EN MODEL, motivo de error:  ${error.message}`)
+        }
+
+    }
+
+    devolver = async () => {
+        return this.ganadores
+    }
 }
 
-export default ganadores
+export default Ganadores

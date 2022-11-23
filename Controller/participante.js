@@ -13,21 +13,22 @@ class controllerParticipantes {
 
     postParticipantes = async (req, res) => {
         const participante = req.body
-        res.json (await this.arrayParticipantes.incorporarParticipante(participante))
+        res.json(await this.arrayParticipantes.incorporarParticipante(participante))
+        /* res.redirect('/') */
     }
 
     putParticipante = async (req, res) => {
         const { id } = req.params
         const participante = req.body
-    
+
         res.json(await this.arrayParticipantes.actualizarUnParticipante(participante, id))
     }
 
-    deleteParticipantes = async(req, res) => {
+    deleteParticipantes = async (req, res) => {
         const { id } = req.params
-    
+
         res.json(await this.arrayParticipantes.quitarUnParticipante(id))
-        
+
     }
 }
 

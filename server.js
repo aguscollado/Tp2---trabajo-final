@@ -1,5 +1,6 @@
 import express from 'express'
 import { RouterParticipantes } from './Router/router.js'
+import { RouterGanadores } from './Router/routerGanadores.js'
 import config from './config.js'
 import nodemailer from 'nodemailer'
 
@@ -58,6 +59,8 @@ transporter = nodemailer.createTransport({
 
 /* app.use('/send', router) */
 app.use('/api/participantes', new RouterParticipantes().start())
+app.use('/api/ganadores', new RouterGanadores().start())
+
 const PORT = config.PORT
 const server = app.listen(PORT, () => console.log(`Servidor escuchando puerto: ${PORT}`))
 server.on('error', error => console.log(`Aca esta el error: ${error.message}`))
