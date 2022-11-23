@@ -1,0 +1,105 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>130</w><h>120</h></coordinates><panel_attributes>Server
+--
+-PORT
+-app
+-server
+--
+-listen()
+-on()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>0</y><w>160</w><h>130</h></coordinates><panel_attributes>RouterParticipantes
+--
+-router
+--
++get(String, List)
++post(String, List)
++put(String, List)
++delete(String, List)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>330</y><w>190</w><h>80</h></coordinates><panel_attributes>ControllerGanadores
+--
+
+--
++getSorteados(obj, obj)
++getObtenerGanadores(): array
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>40</y><w>200</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+-controladorParticipantes</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>40</y><w>200</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>180;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>140</y><w>160</w><h>130</h></coordinates><panel_attributes>RouterGanadores
+--
+-router
+--
++get(String, List)
++post(String, List)
++put(String, List)
++delete(String, List)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>260</y><w>160</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+-controladorGanadores</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>40</x><y>110</y><w>100</w><h>110</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>80;90;10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>10</y><w>180</w><h>130</h></coordinates><panel_attributes>ControllerParticipantes
+--
+
+--
++getParticipantes(req,res)
++postParticipantes(req,res)
++putParticipantes(req,res)
++deleteParticipantes(req,res)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>470</y><w>160</w><h>70</h></coordinates><panel_attributes>ApiGanadores
+--
+-ganadores
+--
++traerGanadores(): array
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>400</y><w>110</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
+-losGanadores
+</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>730</x><y>130</y><w>140</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+-arrayParticipantes
+</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>190</y><w>220</w><h>120</h></coordinates><panel_attributes>ApiParticipantes
+--
+
+--
++devolverParticipantes(): array
++incorporarParticipante(obj) : array
++actualizarParticipante(obj,int): array
++quitarUnParticipante(int): array
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>480</x><y>630</y><w>130</w><h>140</h></coordinates><panel_attributes>
+
+MongoDB
+Sorteo
+// DB Symbol
+_umletcode=
+fg='black';
+bg='#222222';
+drawArc(0,0,width,height*2/5,0,180,true) //Parameters (x, y, width, height, start, extent, open)
+bg='bg';
+drawArc(0,0,width,height*2/5,180,180,true)  //Parameters (x, y, width, height, start, extent, open)
+fg='#929292';
+bg='#222222';
+drawRectangle(0,(height+0.5)/5,width,(height)*3/5-1)  //Parameters (x, y, width, height)
+fg='black'
+drawLine(0,height/5,0,height*4/5) //Parameters (x1, y1, x2, y2)
+drawLine(width,height/5,width,height*4/5) //Parameters (x1, y1, x2, y2)
+bg='bg';
+drawArc(0,height*1/5,width,height*2/5,180,180,true)  //Parameters (x, y, width, height, start, extent, open)
+drawArc(0,height*2/5,width,height*2/5,180,180,true)  //Parameters (x, y, width, height, start, extent, open)
+bg='#222222'
+drawArc(0,height*3/5,width,height*2/5,180,180,true)  //Parameters (x, y, width, height, start, extent, open)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>660</y><w>260</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+-ganadores: collection</panel_attributes><additional_attributes>10;20;240;20</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>490</y><w>220</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
+-participantes: collection
+</panel_attributes><additional_attributes>200;20;70;20;70;140</additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>450</y><w>230</w><h>110</h></coordinates><panel_attributes>DAOParticipantes
+--
+-participantes: array
+--
++obtenerParticipantes(): array
++ingresarParticipante(obj) : array
++modificarParticipante(obj,int): array
++quitarParticipante(int): array
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>640</y><w>160</w><h>130</h></coordinates><panel_attributes>DAOGanadores
+--
+-ganadores
+
+--
+-cantidadDeParticiantes(): int
++random(): int
++sortear(): array
++devolver(): array
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>530</y><w>90</w><h>130</h></coordinates><panel_attributes>lt=&lt;-
+-ganadores
+</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>300</y><w>140</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
+-arrayParticipantes
+</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>690</y><w>260</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+-participantes
+</panel_attributes><additional_attributes>240;20;10;20</additional_attributes></element></diagram>
