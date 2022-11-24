@@ -6,11 +6,19 @@ import generador from '../generador/participantes.js'
 
 describe('Test api rest full', () => {
     describe('GET', () => {
-        it('Debería retornar un status 200', async () => {
+        it('Debería retornar un status 200 para participantes', async () => {
             let response = await request.get('/api/participantes/traer')
             expect(response.status).to.eql(200)
         })
     })
+
+    describe('GET', () => {
+        it('Debería retornar un status 200 para ganadores', async () => {
+            let response = await request.get('/api/ganadores/sortear')
+            expect(response.status).to.eql(200)
+        })
+    })
+
     describe('POST', () => {
         it('Debería incorporar un participante', async () => {
             let participante = generador.get()

@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker';
-//import { faker } from '@faker-js/faker/locale/es';
 
 const get = () => ({
     nombre: faker.name.firstName().split(' ')[0],
