@@ -4,7 +4,7 @@ const request = supertest('http://localhost:8080')
 import {expect} from 'chai'
 import generador from '../generador/participantes.js'
 
-describe('test api rest full', () => {
+describe('Test api rest full', () => {
     describe('GET', () => {
         it('Debería retornar un status 200', async () => {
             let response = await request.get('/api/participantes/traer')
@@ -21,10 +21,10 @@ describe('test api rest full', () => {
             expect(response.status).to.eql(200)
 
             const user = response.body
-            expect(user).to.include.keys('nombre', 'apellido', 'direccion', 'mail')
+            expect(user).to.include.keys('nombre', 'apellido', 'domicilio', 'mail')
             expect(user.nombre).to.eql(participante.nombre)
             expect(user.apellido).to.eql(participante.apellido)
-            expect(user.direccion).to.eql(participante.direccion)
+            expect(user.domicilio).to.eql(participante.domicilio)
             expect(user.mail).to.eql(participante.mail)
         })
     })
